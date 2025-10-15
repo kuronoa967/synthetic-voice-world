@@ -5,404 +5,331 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generated Website</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* 必須のCSS構造 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    :root {
-      --primary: #1f2937;
-      --secondary: #111827;
-      --accent: #6b7280;
-    }
+:root {
+  --primary: #1f2937;
+  --secondary: #111827;
+  --accent: #6b7280;
+}
 
-    body {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: white;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+body {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: white;
+}
 
-    header {
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      padding: 2rem 0;
-      text-align: center;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    }
+header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
 
-    .navigation {
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(8px);
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    }
+.section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
 
-    .navigation ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
+button, .btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-    .navigation a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-      position: relative;
-    }
+button:hover, .btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
 
-    .navigation a::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%) scaleX(0);
-      width: 100%;
-      height: 2px;
-      background-color: var(--accent);
-      transition: transform 0.3s ease;
-    }
+h1, h2, h3 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
 
-    .navigation a:hover::after {
-      transform: translateX(-50%) scaleX(1);
-    }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-    .navigation a:hover {
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
 
-    .section {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px);
-      margin: 2rem auto;
-      padding: 3rem 2rem;
-      border-radius: 15px;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      max-width: 1200px;
-      animation: fadeIn 1s ease-out;
-    }
+/* カスタムスタイル */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem;
-      margin-top: 0;
-      border-radius: 0 0 15px 15px;
-    }
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
 
-    button, .btn {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 1.1rem;
-      font-weight: bold;
-      margin-top: 1.5rem;
-      display: inline-block;
-      text-decoration: none;
-    }
+.toc {
+  margin-top: 40px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-    button:hover, .btn:hover {
-      background: var(--secondary);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
-    }
+.toc h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
 
-    h1, h2, h3 {
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-      margin-bottom: 1rem;
-      word-break: break-word;
-    }
+.toc ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
 
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
-      letter-spacing: 2px;
-    }
+.toc li {
+  margin: 0;
+}
 
-    h2 {
-      font-size: 2.5rem;
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem;
-    }
+.toc a {
+  display: block;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
 
-    h3 {
-      font-size: 1.8rem;
-      color: var(--accent);
-      text-shadow: none;
-    }
+.toc a:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  color: white;
+  text-decoration: none;
+}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+.content-card {
+  margin-bottom: 30px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    a:hover {
-      color: white;
-      text-decoration: underline;
-    }
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
 
-    p {
-      margin-bottom: 1rem;
-      color: #e0e0e0;
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
+.content-card h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
 
-    .card-section .container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+.content-card p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
 
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(7px);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 6px 20px 0 rgba(31, 38, 135, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
+.media-description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
+}
 
-    .card:hover {
-      transform: translateY(-5px) scale(1.01);
-      box-shadow: 0 10px 30px 0 rgba(31, 38, 135, 0.45);
-    }
+.image-placeholder {
+  background: var(--secondary);
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5em;
+  border-radius: 10px;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
 
-    .image-placeholder {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      background-color: var(--secondary);
-      border-radius: 8px;
-      margin-top: 1.5rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      object-fit: cover;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px 15px 0 0;
+  margin-top: 50px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
 
-    .image-placeholder:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-    }
+.footer p {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+@media (min-width: 768px) {
+  .media-description {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
-    .footer {
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      text-align: center;
-      padding: 2rem 0;
-      margin-top: 3rem;
-      border-radius: 15px 15px 0 0;
-    }
+  .image-placeholder {
+    flex: 0 0 300px;
+    max-width: 300px;
+    margin-right: 30px;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  .media-description p {
+    flex: 1;
+    margin-bottom: 0;
+  }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      h2 {
-        font-size: 2rem;
-      }
-      .navigation ul {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      .navigation a {
-        padding: 0.5rem;
-      }
-      .section {
-        margin: 1.5rem auto;
-        padding: 2rem 1rem;
-      }
-      .hero {
-        padding: 3rem 1rem;
-      }
-      .card, .grid-container .card {
-        padding: 1.5rem;
-      }
-    }
+  .hero h1 {
+    font-size: 4.5em;
+  }
 
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-      .btn {
-        padding: 10px 20px;
-        font-size: 1rem;
-      }
-    }
+  .toc ul {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .toc li {
+    flex-basis: calc(33% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;
+  }
+
+  .content-card {
+    padding: 30px 20px;
+  }
+
+  .content-card h2 {
+    font-size: 2em;
+  }
+
+  .toc ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toc li {
+    width: 90%;
+  }
+}
 
   </style>
 </head>
 <body>
-    <header class="header">
-      <div class="container">
-        <h1>合成音声の歴史 🎤</h1>
-        <p>人間と機械のコミュニケーションを紡ぐ技術の進化</p>
-      </div>
+<main class="container">
+    <header class="hero section">
+      <h1>合成音声の歴史</h1>
+      <nav class="toc">
+        <h2>目次</h2>
+        <ul>
+          <li><a href="#intro">合成音声の歴史</a></li>
+          <li><a href="#early-history">初期の合成音声</a></li>
+          <li><a href="#20th-century">20世紀の進化</a></li>
+          <li><a href="#vocaloid">VOCALOIDの登場</a></li>
+          <li><a href="#yukkuri">「ゆっくり」について</a></li>
+          <li><a href="#cevio-voiceroid">CeVIO Creative StudioとVOICEROID</a></li>
+          <li><a href="#applications">現在の活用事例</a></li>
+          <li><a href="#future">未来の展望</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav class="navigation">
-      <div class="container">
-        <ul>
-          <li><a href="#intro">はじめに</a></li>
-          <li><a href="#early">初期の試み</a></li>
-          <li><a href="#20th">20世紀の発展</a></li>
-          <li><a href="#vocaloid">VOCALOIDの登場</a></li>
-          <li><a href="#yukkuri">個性的な合成音声</a></li>
-          <li><a href="#summary">まとめと未来</a></li>
-        </ul>
+    <section id="intro" class="section content-card">
+      <p>合成音声は、人間にとって自然な音声コミュニケーションを機械に実現させるという長年の夢から生まれました。その歴史は古く、初期の機械的な試みから、現代の高度な人工知能による合成まで、様々な進化を遂げてきました。</p>
+    </section>
+
+    <section id="early-history" class="section content-card">
+      <h2>初期の合成音声</h2>
+      <p>初期の合成音声は、機械的な発声装置や、録音された人間の声を編集して単語やフレーズを作る方式が主流でした。例えば、18世紀にはヴォルフガング・フォン・ケンペレンという人物が、機械仕掛けの発声機を開発し、簡単な単語を発声させることに成功しています。</p>
+    </section>
+
+    <section id="20th-century" class="section content-card">
+      <h2>20世紀の進化</h2>
+      <p>20世紀に入ると、電子技術の発展とともに、より複雑な音声合成が可能になります。音素を合成する方式や、規則に基づいて音声を生成する方式など、様々なアプローチが試みられました。この時代の合成音声は、どこか機械的で不自然な響きが特徴でしたが、電話の自動応答や視覚障害者向けの読書装置など、限定的ながらも実用化が進みました。</p>
+    </section>
+
+    <section id="vocaloid" class="section content-card">
+      <h2>VOCALOIDの登場</h2>
+      <div class="media-description">
+        <div class="image-placeholder">VOCALOIDのイメージ</div>
+        <p>そして21世紀に入り、インターネットの普及とコンピュータの処理能力の向上により、合成音声は飛躍的な進化を遂げます。その代表的な例の一つが「VOCALOID」です。これは、ヤマハが開発した歌声合成ソフトウェアであり、入力した歌詞とメロディに基づいて、まるで人間が歌っているかのような合成歌声を生成します。初音ミクに代表されるVOCALOIDのキャラクターたちは、その人間らしい歌声と魅力的なビジュアルで、世界中のクリエイターやリスナーを魅了し、新たな音楽ジャンルを確立しました。VOCALOIDの登場は、合成音声がエンターテインメントの分野で大きな可能性を秘めていることを示しました。</p>
       </div>
-    </nav>
+      <button class="btn" onclick="alert('VOCALOIDの詳細ページへ遷移します');">VOCALOIDについて詳しく</button>
+    </section>
 
-    <main>
-      <section id="intro" class="section hero">
-        <div class="container">
-          <h2>合成音声の歴史 ✨</h2>
-          <p>合成音声は、人間にとって自然な音声コミュニケーションを機械に実現させるという長年の夢から生まれました。その歴史は古く、初期の機械的な試みから、現代の高度な人工知能による合成まで、様々な進化を遂げてきました。</p>
-        </div>
-      </section>
-
-      <section id="early" class="section card-section">
-        <div class="container">
-          <h2>初期の合成音声の試み 🕰️</h2>
-          <div class="card glass-effect">
-            <h3>機械的な発声装置</h3>
-            <p>初期の合成音声は、機械的な発声装置や、録音された人間の声を編集して単語やフレーズを作る方式が主流でした。例えば、18世紀にはヴォルフガング・フォン・ケンペレンという人物が、機械仕掛けの発声機を開発し、簡単な単語を発声させることに成功しています。</p>
-            <img src="https://via.placeholder.com/400x250?text=Early+Voice+Synth" alt="初期の機械的な発声装置のイメージ" class="image-placeholder">
-          </div>
-        </div>
-      </section>
-
-      <section id="20th" class="section glass-effect">
-        <div class="container">
-          <h2>20世紀の発展と実用化 💡</h2>
-          <p>20世紀に入ると、電子技術の発展とともに、より複雑な音声合成が可能になります。音素を合成する方式や、規則に基づいて音声を生成する方式など、様々なアプローチが試みられました。この時代の合成音声は、どこか機械的で不自然な響きが特徴でしたが、電話の自動応答や視覚障害者向けの読書装置など、限定的ながらも実用化が進みました。</p>
-        </div>
-      </section>
-
-      <section id="vocaloid" class="section card-section">
-        <div class="container">
-          <h2>VOCALOIDの登場とエンターテインメントへの波及 🎶</h2>
-          <div class="card glass-effect">
-            <p>そして21世紀に入り、インターネットの普及とコンピュータの処理能力の向上により、合成音声は飛躍的な進化を遂げます。その代表的な例の一つが「VOCALOID」です。これは、ヤマハが開発した歌声合成ソフトウェアであり、入力した歌詞とメロディに基づいて、まるで人間が歌っているかのような合成歌声を生成します。初音ミクに代表されるVOCALOIDのキャラクターたちは、その人間らしい歌声と魅力的なビジュアルで、世界中のクリエイターやリスナーを魅了し、新たな音楽ジャンルを確立しました。VOCALOIDの登場は、合成音声がエンターテインメントの分野で大きな可能性を秘めていることを示しました。</p>
-            <img src="https://via.placeholder.com/600x350?text=VOCALOID+Image" alt="VOCALOIDのイメージ画像" class="image-placeholder">
-          </div>
-        </div>
-      </section>
-
-      <section id="yukkuri" class="section glass-effect">
-        <div class="container">
-          <h2>様々な個性を持つ合成音声たち 🗣️</h2>
-          <p>VOCALOIDの他にも、様々な個性を持つ合成音声が登場しています。</p>
-          <div class="grid-container">
-            <div class="card glass-effect">
-              <h3>ゆっくり</h3>
-              <p>「ゆっくり」は、主に動画共有サイトで広く使われている合成音声の一種です。特定のソフトウェアを使用することで、機械的ながらも独特の抑揚を持つ音声が生成され、解説動画やゲーム実況など、様々なコンテンツで利用されています。その特徴的な声質は、多くの人々に親しまれ、インターネット文化の一部となっています。</p>
-              <img src="https://via.placeholder.com/300x200?text=Yukkuri+Image" alt="ゆっくり音声のイメージ画像" class="image-placeholder">
-            </div>
-            <div class="card glass-effect">
-              <h3>CeVIO Creative Studio / VOICEROID</h3>
-              <p>また、「CeVIO Creative Studio」（通称「CeVIO」）や「VOICEROID」は、より自然な話し声の合成を目指して開発されたソフトウェアです。これらの合成音声は、感情表現や抑揚の調整がVOCALOIDよりも細かく行えるため、ナレーションや朗読、Vtuberの音声など、多岐にわたる用途で活用されています。特にCeVIOは、歌声と話し声の両方を合成できる点で注目され、その表現力の高さは多くのクリエイターに支持されています。VOICEROIDも、魅力的なキャラクターと共に、多彩な声質を提供し、動画制作の現場で不可欠なツールとなっています。</p>
-              <img src="https://via.placeholder.com/300x200?text=CeVIO+VOICEROID" alt="CeVIOとVOICEROIDのイメージ画像" class="image-placeholder">
-            </div>
-            <div class="card glass-effect">
-              <h3>Viceloid / Vicebox</h3>
-              <p>（ViceloidとViceboxに関する説明は、提供されたテキストに直接的な記述がありませんが、他の合成音声と並列で言及されているため、同様の趣旨でイメージ画像を配置します。実際のコンテンツに合わせて調整してください。）</p>
-              <img src="https://via.placeholder.com/300x200?text=Viceloid+Vicebox" alt="ViceloidとViceboxのイメージ画像" class="image-placeholder">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="summary" class="section glass-effect">
-        <div class="container">
-          <h2>まとめと未来 🚀</h2>
-          <p>これらの合成音声は、エンターテインメント分野だけでなく、ビジネスや日常生活の様々な場面で活用されています。例えば、スマートスピーカーの音声アシスタント、自動音声案内、eラーニング教材のナレーション、視覚障害者向けの読み上げ機能など、私たちの生活に密着した形でその恩恵を受ける機会が増えています。</p>
-          <p>合成音声の進化はこれからも止まることはないでしょう。ディープラーニングなどの最新の人工知能技術を取り入れることで、合成音声はより自然で、感情豊かな表現力を獲得しつつあります。将来的には、人間の声と区別がつかないほどのクオリティに達し、さらに多様な役割を担っていくことが期待されます。</p>
-          <button class="btn">未来へ向かってさらに深く探求する</button>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2023 合成音声の歴史探求プロジェクト. All rights reserved.</p>
+    <section id="yukkuri" class="section content-card">
+      <h2>「ゆっくり」について</h2>
+      <div class="media-description">
+        <div class="image-placeholder">「ゆっくり」のイメージ</div>
+        <p>VOCALOIDの他にも、様々な個性を持つ合成音声が登場しています。例えば、「ゆっくり」は、主に動画共有サイトで広く使われている合成音声の一種です。特定のソフトウェアを使用することで、機械的ながらも独特の抑揚を持つ音声が生成され、解説動画やゲーム実況など、様々なコンテンツで利用されています。その特徴的な声質は、多くの人々に親しまれ、インターネット文化の一部となっています。</p>
       </div>
-    </footer>
+      <button class="btn" onclick="alert('ゆっくりについての詳細ページへ遷移します');">ゆっくりについて詳しく</button>
+    </section>
 
+    <section id="cevio-voiceroid" class="section content-card">
+      <h2>CeVIO Creative StudioとVOICEROID</h2>
+      <div class="media-description">
+        <div class="image-placeholder">CeVIO / VOICEROIDのイメージ</div>
+        <p>また、「CeVIO Creative Studio」（通称「CeVIO」）や「VOICEROID」は、より自然な話し声の合成を目指して開発されたソフトウェアです。これらの合成音声は、感情表現や抑揚の調整がVOCALOIDよりも細かく行えるため、ナレーションや朗読、Vtuberの音声など、多岐にわたる用途で活用されています。特にCeVIOは、歌声と話し声の両方を合成できる点で注目され、その表現力の高さは多くのクリエイターに支持されています。VOICEROIDも、魅力的なキャラクターと共に、多彩な声質を提供し、動画制作の現場で不可欠なツールとなっています。</p>
+      </div>
+      <button class="btn" onclick="alert('CeVIO / VOICEROIDの詳細ページへ遷移します');">CeVIO / VOICEROIDについて詳しく</button>
+    </section>
+
+    <section id="applications" class="section content-card">
+      <h2>現在の活用事例</h2>
+      <p>これらの合成音声は、エンターテインメント分野だけでなく、ビジネスや日常生活の様々な場面で活用されています。例えば、スマートスピーカーの音声アシスタント、自動音声案内、eラーニング教材のナレーション、視覚障害者向けの読み上げ機能など、私たちの生活に密着した形でその恩恵を受ける機会が増えています。</p>
+    </section>
+
+    <section id="future" class="section content-card">
+      <h2>未来の展望</h2>
+      <p>合成音声の進化はこれからも止まることはないでしょう。ディープラーニングなどの最新の人工知能技術を取り入れることで、合成音声はより自然で、感情豊かな表現力を獲得しつつあります。将来的には、人間の声と区別がつかないほどのクオリティに達し、さらに多様な役割を担っていくことが期待されます。</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2023 合成音声の歴史. All rights reserved.</p>
+  </footer>
 
   <script>
-    // スクロールアニメーション (オプション)
-    document.addEventListener('DOMContentLoaded', () => {
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll('.section, .card').forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 1s ease-out, transform 1s ease-out';
-        observer.observe(section);
-      });
-    });
 
   </script>
 </body>
