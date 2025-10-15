@@ -103,6 +103,22 @@ a:hover {
   margin-bottom: 20px;
 }
 
+.toc-card {
+  margin-top: -20px; /* タイトルと少し重なり気味にする場合は調整 */
+}
+
+.toc-card .toc {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 25px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.toc-card .toc h2 {
+  margin-bottom: 15px;
+}
+    
 .toc ul {
   list-style: none;
   padding: 0;
@@ -273,6 +289,22 @@ a:hover {
         </ul>
       </nav>
     </header>
+
+    <section class="section content-card toc-card">
+    <nav class="toc">
+      <h2>目次</h2>
+      　<ul>
+        　<li><a href="#intro">合成音声の歴史</a></li>
+        　<li><a href="#early-history">初期の合成音声</a></li>
+        　<li><a href="#20th-century">20世紀の進化</a></li>
+        　<li><a href="#vocaloid">VOCALOIDの登場</a></li>
+        　<li><a href="#yukkuri">「ゆっくり」について</a></li>
+        　<li><a href="#cevio-voiceroid">CeVIO Creative StudioとVOICEROID</a></li>
+        　<li><a href="#applications">現在の活用事例</a></li>
+      　  <li><a href="#future">未来の展望</a></li>
+    　  </ul>
+  　  </nav>
+  　</section>
   
     <section id="intro" class="section content-card">
       <p>合成音声は、人間にとって自然な音声コミュニケーションを機械に実現させるという長年の夢から生まれました。その歴史は古く、初期の機械的な試みから、現代の高度な人工知能による合成まで、様々な進化を遂げてきました。</p>
