@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generated Website</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #06b6d4;
+  --secondary: #0891b2;
+  --accent: #67e8f9;
+  --primary-darker-transparent: rgba(6, 182, 212, 0.5);
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: white;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+button, .btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+h1, h2, h3 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+a {
+  color: var(--accent);
+}
+
+/* Custom styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.pt-24 {
+    padding-top: 6rem;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.z-50 {
+    z-index: 50;
+}
+
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.space-x-6 > *:not(:first-child) {
+    margin-left: 1.5rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
+}
+
+.text-5xl {
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+}
+
+.text-4xl {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+}
+
+.text-2xl {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+}
+
+.text-xl {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem; /* 28px */
+}
+
+.text-lg {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+}
+
+.text-sm {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-extrabold {
+    font-weight: 800;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mb-10 {
+    margin-bottom: 2.5rem;
+}
+
+.mb-12 {
+    margin-bottom: 3rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.mt-8 {
+    margin-top: 2rem;
+}
+
+.mt-10 {
+    margin-top: 2.5rem;
+}
+
+.mt-12 {
+    margin-top: 3rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.p-8 {
+    padding: 2rem;
+}
+
+.bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+}
+
+.bg-gradient-to-t {
+    background-image: linear-gradient(to top, var(--secondary), var(--primary-darker-transparent));
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-opacity-10 {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.bg-opacity-15 {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.bg-opacity-20 {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.text-opacity-80 {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.rounded-md {
+    border-radius: 0.375rem;
+}
+
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.max-w-7xl {
+    max-width: 80rem;
+}
+
+.max-w-6xl {
+    max-width: 72rem;
+}
+
+.max-w-3xl {
+    max-width: 48rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.opacity-10 {
+    opacity: 0.1;
+}
+
+.border-2 {
+    border-width: 2px;
+}
+
+.border-accent {
+    border-color: var(--accent);
+}
+
+.border-opacity-30 {
+    border-color: rgba(103, 232, 249, 0.3);
+}
+
+.grid {
+    display: grid;
+}
+
+.gap-10 {
+    gap: 2.5rem;
+}
+
+.gap-8 {
+    gap: 2rem;
+}
+
+.leading-relaxed {
+    line-height: 1.625;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.space-y-6 > *:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.aspect-w-16 {
+    --aspect-w: 16;
+}
+
+.aspect-h-9 {
+    --aspect-h: 9;
+}
+
+.aspect-w-16 .aspect-h-9 {
+    position: relative;
+    padding-bottom: calc(var(--aspect-h) / var(--aspect-w) * 100%);
+}
+
+.aspect-w-16 .aspect-h-9 img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.inset-0 {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.from-black {
+    --tw-gradient-from: #000;
+    --tw-gradient-to: rgba(0, 0, 0, 0);
+}
+
+.to-transparent {
+    --tw-gradient-to: rgba(0, 0, 0, 0);
+}
+
+.bg-gradient-to-t {
+    background-image: linear-gradient(to top, var(--tw-gradient-from), var(--tw-gradient-to));
+}
+
+.bottom-4 {
+    bottom: 1rem;
+}
+
+.left-4 {
+    left: 1rem;
+}
+
+.transition {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.duration-300 {
+    transition-duration: 300ms;
+}
+
+.duration-500 {
+    transition-duration: 500ms;
+}
+
+.transform {
+    transform: var(--tw-transform);
+}
+
+.hover\:scale-105:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: var(--tw-transform);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+    animation: slideUp 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.animate-bounce {
+    animation: bounce 1s infinite alternate;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Ensure the footer has a distinct background */
+footer {
+    background: linear-gradient(to top, var(--secondary) 0%, rgba(6, 182, 212, 0.5) 100%);
+    box-shadow: inset 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+  </style>
+</head>
+<body>
+<header class="py-4 px-6 fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-3xl font-bold">合成音声の歴史</h1>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#history" class="text-white hover:text-accent transition duration-300">歴史</a></li>
+                <li><a href="#vocaloid" class="text-white hover:text-accent transition duration-300">VOCALOID</a></li>
+                <li><a href="#yukkuri" class="text-white hover:text-accent transition duration-300">ゆっくり</a></li>
+                <li><a href="#cevio-voiceroid" class="text-white hover:text-accent transition duration-300">CeVIO/VOICEROID</a></li>
+                <li><a href="#future" class="text-white hover:text-accent transition duration-300">未来</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="pt-24">
+    <section id="hero" class="section bg-gradient-to-br from-primary to-secondary text-center py-20 px-6 mb-12 shadow-lg rounded-lg mx-auto max-w-7xl relative overflow-hidden">
+        <h2 class="text-5xl font-extrabold mb-4 animate-fade-in">合成音声の世界へようこそ！</h2>
+        <p class="text-xl mb-8 p-4 bg-white bg-opacity-20 rounded-md inline-block backdrop-blur-sm animate-slide-up">人間と機械が織りなす「声」の物語を辿る旅</p>
+        <button class="btn text-lg animate-bounce">歴史を探索する 🚀</button>
+        <div class="absolute inset-0 z-0 opacity-10">
+            <svg class="w-full h-full" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+                <rect x="0" y="0" width="100" height="100" opacity="0.1" />
+                <circle cx="20" cy="20" r="10" fill="#67e8f9" opacity="0.2"></circle>
+                <circle cx="80" cy="50" r="15" fill="#06b6d4" opacity="0.2"></circle>
+                <circle cx="50" cy="80" r="12" fill="#0891b2" opacity="0.2"></circle>
+            </svg>
+        </div>
+    </section>
+
+    <section id="history" class="section py-16 px-6 mb-12 rounded-lg mx-auto max-w-6xl shadow-lg border-2 border-accent border-opacity-30">
+        <h2 class="text-4xl font-bold text-center mb-10">合成音声の歴史 🌐</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <p class="text-lg leading-relaxed mb-6 bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">合成音声は、人間にとって自然な音声コミュニケーションを機械に実現させるという長年の夢から生まれました。その歴史は古く、初期の機械的な試みから、現代の高度な人工知能による合成まで、様々な進化を遂げてきました。</p>
+                <p class="text-lg leading-relaxed bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">初期の合成音声は、機械的な発声装置や、録音された人間の声を編集して単語やフレーズを作る方式が主流でした。例えば、18世紀にはヴォルフガング・フォン・ケンペレンという人物が、機械仕掛けの発声機を開発し、簡単な単語を発声させることに成功しています。</p>
+            </div>
+            <div class="relative overflow-hidden rounded-xl shadow-xl transform hover:scale-105 transition duration-500">
+                <img src="https://via.placeholder.com/600x400?text=Initial+Voice+Synthesizer" alt="初期の合成音声装置" class="w-full h-auto object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                <p class="absolute bottom-4 left-4 text-white text-sm">ヴォルフガング・フォン・ケンペレンの発声機イメージ</p>
+            </div>
+        </div>
+        <p class="text-lg leading-relaxed mt-10 bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">20世紀に入ると、電子技術の発展とともに、より複雑な音声合成が可能になります。音素を合成する方式や、規則に基づいて音声を生成する方式など、様々なアプローチが試みられました。この時代の合成音声は、どこか機械的で不自然な響きが特徴でしたが、電話の自動応答や視覚障害者向けの読書装置など、限定的ながらも実用化が進みました。</p>
+    </section>
+
+    <section id="vocaloid" class="section py-16 px-6 mb-12 rounded-lg mx-auto max-w-6xl shadow-lg border-2 border-accent border-opacity-30">
+        <h2 class="text-4xl font-bold text-center mb-10">VOCALOIDの登場 🎤</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="flex flex-col space-y-6">
+                <p class="text-lg leading-relaxed bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">そして21世紀に入り、インターネットの普及とコンピュータの処理能力の向上により、合成音声は飛躍的な進化を遂げます。その代表的な例の一つが「VOCALOID」です。これは、ヤマハが開発した歌声合成ソフトウェアであり、入力した歌詞とメロディに基づいて、まるで人間が歌っているかのような合成歌声を生成します。</p>
+                <p class="text-lg leading-relaxed bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">初音ミクに代表されるVOCALOIDのキャラクターたちは、その人間らしい歌声と魅力的なビジュアルで、世界中のクリエイターやリスナーを魅了し、新たな音楽ジャンルを確立しました。VOCALOIDの登場は、合成音声がエンターテインメントの分野で大きな可能性を秘めていることを示しました。</p>
+            </div>
+            <div class="image-placeholder aspect-w-16 aspect-h-9 relative overflow-hidden rounded-xl shadow-xl transform hover:scale-105 transition duration-500">
+                <img src="https://via.placeholder.com/800x450?text=VOCALOID+%28e.g.+Hatsune+Miku%29" alt="VOCALOIDのイメージ（初音ミクなど）" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                <p class="absolute bottom-4 left-4 text-white text-sm">初音ミクのイメージ</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="yukkuri" class="section py-16 px-6 mb-12 rounded-lg mx-auto max-w-6xl shadow-lg border-2 border-accent border-opacity-30">
+        <h2 class="text-4xl font-bold text-center mb-10">個性豊かな合成音声たち：ゆっくり 🗣️</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="image-placeholder aspect-w-16 aspect-h-9 relative overflow-hidden rounded-xl shadow-xl transform hover:scale-105 transition duration-500">
+                <img src="https://via.placeholder.com/800x450?text=Yukkuri+Voice" alt="ゆっくり音声のイメージキャラクター" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                <p class="absolute bottom-4 left-4 text-white text-sm">ゆっくり音声のイメージ</p>
+            </div>
+            <div class="flex flex-col space-y-6">
+                <p class="text-lg leading-relaxed bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">VOCALOIDの他にも、様々な個性を持つ合成音声が登場しています。例えば、「ゆっくり」は、主に動画共有サイトで広く使われている合成音声の一種です。特定のソフトウェアを使用することで、機械的ながらも独特の抑揚を持つ音声が生成され、解説動画やゲーム実況など、様々なコンテンツで利用されています。</p>
+                <p class="text-lg leading-relaxed bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">その特徴的な声質は、多くの人々に親しまれ、インターネット文化の一部となっています。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cevio-voiceroid" class="section py-16 px-6 mb-12 rounded-lg mx-auto max-w-6xl shadow-lg border-2 border-accent border-opacity-30">
+        <h2 class="text-4xl font-bold text-center mb-10">CeVIO / VOICEROID / Vicebox 🎧</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="flex flex-col space-y-6">
+                <p class="text-lg leading-relaxed bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">また、「CeVIO Creative Studio」（通称「CeVIO」）や「VOICEROID」は、より自然な話し声の合成を目指して開発されたソフトウェアです。これらの合成音声は、感情表現や抑揚の調整がVOCALOIDよりも細かく行えるため、ナレーションや朗読、Vtuberの音声など、多岐にわたる用途で活用されています。</p>
+                <p class="text-lg leading-relaxed bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">特にCeVIOは、歌声と話し声の両方を合成できる点で注目され、その表現力の高さは多くのクリエイターに支持されています。VOICEROIDも、魅力的なキャラクターと共に、多彩な声質を提供し、動画制作の現場で不可欠なツールとなっています。</p>
+                <p class="text-lg leading-relaxed bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">※「viceloid」「vicebox」の説明は原文にありませんが、同様の音声合成技術として存在します。詳細は後日追加予定です。</p>
+            </div>
+            <div class="image-placeholder aspect-w-16 aspect-h-9 relative overflow-hidden rounded-xl shadow-xl transform hover:scale-105 transition duration-500">
+                <img src="https://via.placeholder.com/800x450?text=CeVIO+and+VOICEROID" alt="CeVIOとVOICEROIDのイメージ" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+                <p class="absolute bottom-4 left-4 text-white text-sm">CeVIOとVOICEROIDの利用イメージ</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="applications" class="section py-16 px-6 mb-12 rounded-lg mx-auto max-w-6xl shadow-lg border-2 border-accent border-opacity-30 text-center">
+        <h2 class="text-4xl font-bold mb-10">多岐にわたる活用分野 💡</h2>
+        <p class="text-lg leading-relaxed mb-8 bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm inline-block max-w-3xl">これらの合成音声は、エンターテインメント分野だけでなく、ビジネスや日常生活の様々な場面で活用されています。例えば、スマートスピーカーの音声アシスタント、自動音声案内、eラーニング教材のナレーション、視覚障害者向けの読み上げ機能など、私たちの生活に密着した形でその恩恵を受ける機会が増えています。</p>
+        <div class="grid md:grid-cols-3 gap-8 mt-8">
+            <div class="bg-white bg-opacity-15 p-8 rounded-xl shadow-md backdrop-blur-sm transform hover:scale-105 transition duration-300">
+                <h3 class="text-2xl font-semibold mb-4">エンターテインメント</h3>
+                <p>音楽、動画制作、ゲーム実況、Vtuber</p>
+            </div>
+            <div class="bg-white bg-opacity-15 p-8 rounded-xl shadow-md backdrop-blur-sm transform hover:scale-105 transition duration-300">
+                <h3 class="text-2xl font-semibold mb-4">ビジネス・教育</h3>
+                <p>ナレーション、eラーニング、音声案内、顧客対応</p>
+            </div>
+            <div class="bg-white bg-opacity-15 p-8 rounded-xl shadow-md backdrop-blur-sm transform hover:scale-105 transition duration-300">
+                <h3 class="text-2xl font-semibold mb-4">日常生活・支援</h3>
+                <p>スマートスピーカー、読み上げ機能、アクセシビリティ</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="future" class="section py-16 px-6 rounded-lg mx-auto max-w-6xl shadow-lg border-2 border-accent border-opacity-30 text-center">
+        <h2 class="text-4xl font-bold mb-10">合成音声の未来 ✨</h2>
+        <p class="text-lg leading-relaxed mb-8 bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm inline-block max-w-3xl">合成音声の進化はこれからも止まることはないでしょう。ディープラーニングなどの最新の人工知能技術を取り入れることで、合成音声はより自然で、感情豊かな表現力を獲得しつつあります。</p>
+        <p class="text-lg leading-relaxed mb-8 bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm inline-block max-w-3xl">将来的には、人間の声と区別がつかないほどのクオリティに達し、さらに多様な役割を担っていくことが期待されます。</p>
+        <button class="btn text-lg mt-6">未来を体験する 🚀</button>
+    </section>
+</main>
+
+<footer class="py-8 px-6 mt-12 text-center bg-gradient-to-t from-secondary to-primary-darker-transparent">
+    <p class="text-white text-opacity-80">© 2023 合成音声の歴史. All rights reserved.</p>
+</footer>
+
+  <script>
+
+  </script>
+</body>
+</html>
