@@ -36,6 +36,7 @@ header {
 }
 
 button, .btn {
+  display: block;
   background: var(--accent);
   color: white;
   border: none;
@@ -43,6 +44,7 @@ button, .btn {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin: 20px auto 0px;
 }
 
 button:hover, .btn:hover {
@@ -120,11 +122,11 @@ a:hover {
 
 .toc-card .toc ul {
   list-style: none;
-  margin: 0;
+  margin: 20px 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 10px;
 }
 
 .toc-card .toc li {
@@ -141,17 +143,10 @@ a:hover {
   background: var(--accent);
   transform: none;               /* 浮き上がり効果をやめて落ち着いた感じに */
 }
-
-.toc-card {
-  padding: 0 40px;
-}
-
-.content-card {
-  padding: 40px;
-}
-    
+   
 .card {
   margin-bottom: 30px;
+  padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -172,7 +167,7 @@ a:hover {
 
 .card p {
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-top: 20px;
   font-size: 1.1em;
   color: rgba(255, 255, 255, 0.9);
 }
