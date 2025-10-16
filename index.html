@@ -146,32 +146,35 @@ a:hover {
   transform: none;               /* 浮き上がり効果をやめて落ち着いた感じに */
 }
 
-.toc-card .content-card {
+.toc-card {
   padding: 0 40px;
 }
-    
+
 .content-card {
-  margin-bottom: 30px;
   padding: 40px;
+}
+    
+.card {
+  margin-bottom: 30px;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content-card:hover {
+.card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
 }
 
-.content-card h2 {
+.card h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 10px;
 }
 
-.content-card p {
+.card p {
   line-height: 1.8;
   margin-bottom: 20px;
   font-size: 1.1em;
@@ -252,11 +255,11 @@ a:hover {
     font-size: 2.8em;
   }
 
-  .content-card {
+  .card {
     padding: 30px 20px;
   }
 
-  .content-card h2 {
+  .card h2 {
     font-size: 2em;
   }
 
@@ -280,7 +283,7 @@ a:hover {
        その歴史は古く、<wbr>初期の<wbr>機械的な試みから、<wbr>現代の<wbr>高度な人工知能による合成まで、<wbr>様々な進化を<wbr>遂げてきました。</p>
   </header>
 
-  <section class="section content-card toc-card">
+  <section class="section card toc-card">
     <nav class="toc">
       <h2>目次</h2>
       　<ul>
@@ -295,17 +298,17 @@ a:hover {
   　  </nav>
   　</section>
 
-    <section id="early-history" class="section content-card">
+    <section id="early-history" class="section card content-card">
       <h2>初期の合成音声</h2>
       <p>初期の合成音声は、機械的な発声装置や、録音された人間の声を編集して単語やフレーズを作る方式が主流でした。例えば、18世紀にはヴォルフガング・フォン・ケンペレンという人物が、機械仕掛けの発声機を開発し、簡単な単語を発声させることに成功しています。</p>
     </section>
 
-    <section id="20th-century" class="section content-card">
+    <section id="20th-century" class="section card content-card">
       <h2>20世紀の進化</h2>
       <p>20世紀に入ると、電子技術の発展とともに、より複雑な音声合成が可能になります。音素を合成する方式や、規則に基づいて音声を生成する方式など、様々なアプローチが試みられました。この時代の合成音声は、どこか機械的で不自然な響きが特徴でしたが、電話の自動応答や視覚障害者向けの読書装置など、限定的ながらも実用化が進みました。</p>
     </section>
 
-    <section id="vocaloid" class="section content-card">
+    <section id="vocaloid" class="section card content-card">
       <h2>VOCALOIDの登場</h2>
       <div class="media-description">
         <div class="image-placeholder">VOCALOIDのイメージ</div>
@@ -314,7 +317,7 @@ a:hover {
       <button class="btn" onclick="alert('VOCALOIDの詳細ページへ遷移します');">VOCALOIDについて詳しく</button>
     </section>
 
-    <section id="yukkuri" class="section content-card">
+    <section id="yukkuri" class="section card content-card">
       <h2>「ゆっくり」について</h2>
       <div class="media-description">
         <div class="image-placeholder">「ゆっくり」のイメージ</div>
@@ -323,7 +326,7 @@ a:hover {
       <button class="btn" onclick="alert('ゆっくりについての詳細ページへ遷移します');">ゆっくりについて詳しく</button>
     </section>
 
-    <section id="cevio-voiceroid" class="section content-card">
+    <section id="cevio-voiceroid" class="section card content-card">
       <h2>CeVIO Creative StudioとVOICEROID</h2>
       <div class="media-description">
         <div class="image-placeholder">CeVIO / VOICEROIDのイメージ</div>
@@ -332,12 +335,12 @@ a:hover {
       <button class="btn" onclick="alert('CeVIO / VOICEROIDの詳細ページへ遷移します');">CeVIO / VOICEROIDについて詳しく</button>
     </section>
 
-    <section id="applications" class="section content-card">
+    <section id="applications" class="section card content-card">
       <h2>現在の活用事例</h2>
       <p>これらの合成音声は、エンターテインメント分野だけでなく、ビジネスや日常生活の様々な場面で活用されています。例えば、スマートスピーカーの音声アシスタント、自動音声案内、eラーニング教材のナレーション、視覚障害者向けの読み上げ機能など、私たちの生活に密着した形でその恩恵を受ける機会が増えています。</p>
     </section>
 
-    <section id="future" class="section content-card">
+    <section id="future" class="section card content-card">
       <h2>未来の展望</h2>
       <p>合成音声の進化はこれからも止まることはないでしょう。ディープラーニングなどの最新の人工知能技術を取り入れることで、合成音声はより自然で、感情豊かな表現力を獲得しつつあります。将来的には、人間の声と区別がつかないほどのクオリティに達し、さらに多様な役割を担っていくことが期待されます。</p>
     </section>
