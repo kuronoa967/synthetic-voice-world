@@ -173,16 +173,11 @@ a:hover {
   margin-bottom: 25px;
 }
 
-.image-placeholder {
-  background: var(--secondary);
-  min-height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 1.5em;
+.media-description img {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
-  border: 2px dashed rgba(255, 255, 255, 0.3);
+  object-fit: cover;
 }
 
 .final {
@@ -202,7 +197,7 @@ a:hover {
   font-size: 0.9em;
   color: rgba(255, 255, 255, 0.7);
 }
-
+    
 @media (min-width: 768px) {
   .media-description {
     flex-direction: row;
@@ -210,16 +205,15 @@ a:hover {
     justify-content: space-between;
   }
 
-  .image-placeholder {
-    flex: 0 0 300px;
-    max-width: 300px;
-    margin-right: 30px;
+  .media-description img {
+    flex: 0 0 48%;   /* 横幅を約半分に */
+    max-width: 48%;
   }
 
   .media-description p {
-    flex: 1;
-    margin-bottom: 0;
+    flex: 0 0 48%;   /* テキストも約半分に */
   }
+}
 
   .hero h1 {
     font-size: 4.5em;
@@ -300,7 +294,6 @@ a:hover {
     <section id="vocaloid" class="section card content-card">
       <h2>VOCALOIDの登場</h2>
       <div class="media-description">
-        <!-- <div class="image-placeholder"></div> -->
         <img src="./images/ch_img_miku.png" alt="初音ミク">
         <p>そして21世紀に入り、インターネットの普及とコンピュータの処理能力の向上により、合成音声は飛躍的な進化を遂げます。その代表的な例の一つが「VOCALOID」です。これは、ヤマハが開発した歌声合成ソフトウェアであり、入力した歌詞とメロディに基づいて、まるで人間が歌っているかのような合成歌声を生成します。初音ミクに代表されるVOCALOIDのキャラクターたちは、その人間らしい歌声と魅力的なビジュアルで、世界中のクリエイターやリスナーを魅了し、新たな音楽ジャンルを確立しました。VOCALOIDの登場は、合成音声がエンターテインメントの分野で大きな可能性を秘めていることを示しました。</p>
       </div>
@@ -318,7 +311,6 @@ a:hover {
     <section id="cevio-voiceroid" class="section card content-card">
       <h2>CeVIO Creative StudioとVOICEROID</h2>
       <div class="media-description">
-        <div class="image-placeholder">CeVIO / VOICEROIDのイメージ</div>
         <p>また、「CeVIO Creative Studio」（通称「CeVIO」）や「VOICEROID」は、より自然な話し声の合成を目指して開発されたソフトウェアです。これらの合成音声は、感情表現や抑揚の調整がVOCALOIDよりも細かく行えるため、ナレーションや朗読、Vtuberの音声など、多岐にわたる用途で活用されています。特にCeVIOは、歌声と話し声の両方を合成できる点で注目され、その表現力の高さは多くのクリエイターに支持されています。VOICEROIDも、魅力的なキャラクターと共に、多彩な声質を提供し、動画制作の現場で不可欠なツールとなっています。</p>
       </div>
       <button class="btn" onclick="alert('CeVIO / VOICEROIDの詳細ページへ遷移します');">CeVIO / VOICEROIDについて詳しく</button>
