@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOCALOIDについて詳しく</title>
+  <style>
+/* ======= 共通スタイル ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1f2937;
+  --secondary: #111827;
+  --accent: #6b7280;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: white;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+button, .btn, .back-btn {
+  display: block;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto 0px;
+  text-align: center;
+  text-decoration: none;
+}
+
+button:hover, .btn:hover, .back-btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+h1, h2, h3 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ======= レイアウト ======= */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  text-align: left;
+  padding: 0 50px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.card {
+  margin-bottom: 30px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.8;
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.media-description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.media-description img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px 15px 0 0;
+  margin-top: 50px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ======= レスポンシブ ======= */
+@media (min-width: 768px) {
+  .media-description {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .media-description img {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+
+  .media-description .in-image p {
+    flex: 0 0 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .card h2 {
+    font-size: 2em;
+  }
+}
+  </style>
+</head>
+
+<body>
+<main class="container">
+  <header class="hero section">
+    <h1>VOCALOIDとは</h1>
+    <p>VOCALOID（ボーカロイド）は、ヤマハが開発した歌声合成技術およびそのソフトウェアです。<wbr>
+       入力された歌詞とメロディに基づいて、まるで人間のように歌う音声を生成することができます。<wbr>
+       音楽制作の形を大きく変え、個人クリエイターでも自由に「歌声」を使える時代を切り拓きました。</p>
+  </header>
+
+  <section class="section card">
+    <h2>仕組みと技術</h2>
+    <p>VOCALOIDは、録音した人間の声をもとに作られた「音声データベース（ボイスバンク）」を使用し、音の高さ・長さ・抑揚などを指定して歌声を合成します。<wbr>
+       ユーザーはピアノロール形式の画面上でメロディと歌詞を入力することで、自由に歌を作り上げることができます。<wbr>
+       最新のバージョンでは、より自然な発音や息遣い、感情の表現も可能となっています。</p>
+  </section>
+
+  <section class="section card">
+    <h2>代表的なキャラクター</h2>
+    <div class="media-description in-image">
+      <img src="./images/ch_img_miku.png" alt="初音ミク">
+      <p>VOCALOIDを象徴する存在として最も有名なのが「初音ミク」です。<wbr>
+         彼女は2007年にクリプトン・フューチャー・メディアから発売され、世界的なブームを巻き起こしました。<wbr>
+         ほかにも鏡音リン・レン、巡音ルカ、MEIKO、KAITOなど多彩なキャラクターが存在し、<wbr>
+         各キャラクターに個性や設定が与えられることで、音楽のみならず文化的な広がりを見せています。</p>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>音楽文化への影響</h2>
+    <p>VOCALOIDの登場により、音楽制作の民主化が進みました。<wbr>
+       プロのスタジオを持たない個人でも、パソコン一台で高品質な楽曲を作り、インターネットで世界中に発信できるようになりました。<wbr>
+       また、クリエイター同士のコラボレーションや、動画共有サイトでの投稿文化も発展し、<wbr>
+       「ボカロ文化」と呼ばれる新しいコミュニティが形成されました。</p>
+  </section>
+
+  <section class="section card">
+    <h2>今後の展開</h2>
+    <p>VOCALOID技術はCeVIO AIなどのAI合成技術とも融合しつつあり、<wbr>
+       今後はより人間に近い表現力と柔軟性を持つ音声合成へと進化していくと期待されています。<wbr>
+       また、VTuberやメタバースといった分野でも、仮想キャラクターが自ら歌う世界が広がりつつあります。</p>
+  </section>
+
+  <a href="./index.html" class="back-btn">← 戻る</a>
+</main>
+
+<footer class="footer">
+  <p>© 2023 合成音声の歴史. All rights reserved.</p>
+</footer>
+</body>
+</html>
