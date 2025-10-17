@@ -35,7 +35,7 @@ header {
   backdrop-filter: blur(5px);
 }
 
-button, .btn, .back-btn {
+button, .btn {
   display: block;
   background: var(--accent);
   color: white;
@@ -45,11 +45,9 @@ button, .btn, .back-btn {
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 20px auto 0px;
-  text-align: center;
-  text-decoration: none;
 }
 
-button:hover, .btn:hover, .back-btn:hover {
+button:hover, .btn:hover {
   background: var(--secondary);
   transform: translateY(-2px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -235,7 +233,7 @@ a:hover {
        また、VTuberやメタバースといった分野でも、仮想キャラクターが自ら歌う世界が広がりつつあります。</p>
   </section>
 
-  <a href="./index.html" class="back-btn">← 戻る</a>
+  <button class="btn" onclick="location.href='./index.html'">戻る</button>
 </main>
 
 <footer class="footer">
