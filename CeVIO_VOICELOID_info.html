@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: white;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -79,24 +80,64 @@ a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .hero h1 {
-  font-size: 3.5em;
+  font-size: 3.2em;
   margin-bottom: 30px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .hero p {
   text-align: left;
-  padding: 0 50px;
+  padding: 0 40px;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
 
+/* ======= 目次 ======= */
+.toc-card {
+  margin: 30px auto 40px;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  max-width: 700px;
+}
+
+.toc-card h2 {
+  text-align: center;
+  font-size: 1.6em;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 8px;
+}
+
+.toc-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc-card ul li {
+  margin: 6px 0;
+}
+
+.toc-card a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.toc-card a:hover {
+  background: var(--accent);
+}
+
+/* ======= コンテンツ ======= */
 .card {
   margin-bottom: 30px;
   padding: 40px;
@@ -112,7 +153,7 @@ a:hover {
 }
 
 .card h2 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin-bottom: 20px;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 10px;
@@ -139,6 +180,7 @@ a:hover {
   object-fit: cover;
 }
 
+/* ======= フッター ======= */
 .footer {
   text-align: center;
   padding: 30px;
@@ -166,7 +208,7 @@ a:hover {
     max-width: 48%;
   }
 
-  .media-description .in-image p {
+  .media-description p {
     flex: 0 0 48%;
   }
 }
@@ -177,7 +219,7 @@ a:hover {
   }
 
   .hero h1 {
-    font-size: 2.8em;
+    font-size: 2.5em;
   }
 
   .card {
@@ -185,7 +227,7 @@ a:hover {
   }
 
   .card h2 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 }
   </style>
@@ -199,8 +241,23 @@ a:hover {
        両者は音声合成技術の発展に大きく寄与し、個人クリエイターによる創作文化を支えています。</p>
   </header>
 
+  <!-- 目次 -->
+  <section class="toc-card">
+    <h2>目次</h2>
+    <ul>
+      <li><a href="#cevio">CeVIO Creative Studioについて</a></li>
+      <li><a href="#cevio-tech">CeVIO Creative Studioの技術的特徴</a></li>
+      <li><a href="#cevio-evolution">CeVIO Creative Studioの技術と発展</a></li>
+      <li><a href="#cevio-culture">CeVIOの文化的影響</a></li>
+      <li><a href="#voiceroid">VOICEROIDについて</a></li>
+      <li><a href="#voiceroid-tech">VOICEROIDの技術的特徴</a></li>
+      <li><a href="#ai-voice">A.I.VOICEへの発展</a></li>
+      <li><a href="#voiceroid-culture">VOICEROIDの文化的影響</a></li>
+    </ul>
+  </section>
+
   <!-- CeVIO Creative Studio -->
-  <section class="section card">
+  <section class="section card" id="cevio">
     <h2>CeVIO Creative Studioについて</h2>
     <div class="media-description">
       <img src="./images/cevio_image.png" alt="CeVIO Creative Studioの画像枠">
@@ -210,29 +267,29 @@ a:hover {
     </div>
   </section>
 
-  <section class="section card">
+  <section class="section card" id="cevio-tech">
     <h2>CeVIO Creative Studioの技術的特徴</h2>
     <p>CeVIOは音声合成（トーク）と歌声合成（ソング）の両機能を備えています。<wbr>
-       感情・抑揚・速度・音高などを細かく設定することができ、<wbr>
+       感情・抑揚・速度・音高などを細かく設定でき、<wbr>
        まるで声優が演じているかのような音声を生成できます。<wbr>
        操作画面は直感的で扱いやすく、初心者から上級者まで幅広いユーザーが利用しています。</p>
   </section>
 
-  <section class="section card">
+  <section class="section card" id="cevio-evolution">
     <h2>CeVIO Creative Studioの技術と発展</h2>
     <p>CeVIOは独自の「CSエンジン」により、発話の自然さを重視した音声合成を実現しています。<wbr>
        さらに、AIを活用した「CeVIO AI」では、文脈に応じた滑らかな発声が可能となりました。<wbr>
        声優の演技を学習したAIボイスが登場し、ナレーションや歌唱分野で新たな表現が広がっています。</p>
   </section>
 
-  <section class="section card">
+  <section class="section card" id="cevio-culture">
     <h2>CeVIOの文化的影響</h2>
     <p>CeVIOのキャラクターたちは、単なる音声ソフトの枠を超えた創作キャラクターとしても人気を集めています。<wbr>
        二次創作やドラマ動画、VTuber活動などに応用され、「声で演じる」文化を形成しました。</p>
   </section>
 
   <!-- VOICEROID -->
-  <section class="section card">
+  <section class="section card" id="voiceroid">
     <h2>VOICEROIDについて</h2>
     <div class="media-description">
       <img src="./images/voiceroid_image.png" alt="VOICEROIDの画像枠">
@@ -242,20 +299,20 @@ a:hover {
     </div>
   </section>
 
-  <section class="section card">
+  <section class="section card" id="voiceroid-tech">
     <h2>VOICEROIDの技術的特徴</h2>
     <p>VOICEROIDはAquesTalkエンジンをベースとし、音素ごとの強弱や抑揚を制御することで自然な発話を実現しています。<wbr>
        話速やピッチの調整も容易で、長文の読み上げや会話形式のセリフにも対応できます。</p>
   </section>
 
-  <section class="section card">
+  <section class="section card" id="ai-voice">
     <h2>A.I.VOICEへの発展</h2>
     <p>VOICEROIDシリーズの進化形として登場したのが「A.I.VOICE」です。<wbr>
        AIがイントネーションや感情を自動的に補完し、より自然で滑らかな音声を生成します。<wbr>
        これにより、企業ナレーションや教育分野などへの応用が進んでいます。</p>
   </section>
 
-  <section class="section card">
+  <section class="section card" id="voiceroid-culture">
     <h2>VOICEROIDの文化的影響</h2>
     <p>VOICEROIDキャラクターは、動画文化において“人格を持つ声”として広く愛されています。<wbr>
        「VOICEROID実況」などのジャンルを生み出し、創作文化の発展に大きな影響を与えました。</p>
