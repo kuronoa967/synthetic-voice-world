@@ -1,1 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CeVIO Creative StudioとVOICEROIDについて詳しく</title>
+  <style>
+/* ======= 共通スタイル ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+:root {
+  --primary: #1f2937;
+  --secondary: #111827;
+  --accent: #6b7280;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: white;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+button, .btn {
+  display: block;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto 0px;
+}
+
+button:hover, .btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+h1, h2, h3 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ======= レイアウト ======= */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  text-align: left;
+  padding: 0 50px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.card {
+  margin-bottom: 30px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.8;
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.media-description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.media-description img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px 15px 0 0;
+  margin-top: 50px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ======= レスポンシブ ======= */
+@media (min-width: 768px) {
+  .media-description {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .media-description img {
+    flex: 0 0 48%;
+    max-width: 48%;
+  }
+
+  .media-description .in-image p {
+    flex: 0 0 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .card h2 {
+    font-size: 2em;
+  }
+}
+  </style>
+</head>
+
+<body>
+<main class="container">
+  <header class="hero section">
+    <h1>CeVIO Creative StudioとVOICEROIDについて</h1>
+    <p>ここでは、代表的な音声合成ソフトウェアであるCeVIO Creative StudioとVOICEROIDについて紹介します。<wbr>
+       両者は音声合成技術の発展に大きく寄与し、個人クリエイターによる創作文化を支えています。</p>
+  </header>
+
+  <!-- CeVIO Creative Studio -->
+  <section class="section card">
+    <h2>CeVIO Creative Studioについて</h2>
+    <div class="media-description">
+      <img src="./images/cevio_image.png" alt="CeVIO Creative Studioの画像枠">
+      <p>CeVIO Creative Studioは、株式会社テクノスピーチを中心に開発された音声合成ソフトウェアです。<wbr>
+         感情を持った自然な発話を目指しており、歌唱・ナレーション・台詞など幅広い用途に対応しています。<wbr>
+         代表的なキャラクターには「さとうささら」「すずきつづみ」「タカハシ」などが存在します。</p>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>CeVIO Creative Studioの技術的特徴</h2>
+    <p>CeVIOは音声合成（トーク）と歌声合成（ソング）の両機能を備えています。<wbr>
+       感情・抑揚・速度・音高などを細かく設定することができ、<wbr>
+       まるで声優が演じているかのような音声を生成できます。<wbr>
+       操作画面は直感的で扱いやすく、初心者から上級者まで幅広いユーザーが利用しています。</p>
+  </section>
+
+  <section class="section card">
+    <h2>CeVIO Creative Studioの技術と発展</h2>
+    <p>CeVIOは独自の「CSエンジン」により、発話の自然さを重視した音声合成を実現しています。<wbr>
+       さらに、AIを活用した「CeVIO AI」では、文脈に応じた滑らかな発声が可能となりました。<wbr>
+       声優の演技を学習したAIボイスが登場し、ナレーションや歌唱分野で新たな表現が広がっています。</p>
+  </section>
+
+  <section class="section card">
+    <h2>CeVIOの文化的影響</h2>
+    <p>CeVIOのキャラクターたちは、単なる音声ソフトの枠を超えた創作キャラクターとしても人気を集めています。<wbr>
+       二次創作やドラマ動画、VTuber活動などに応用され、「声で演じる」文化を形成しました。</p>
+  </section>
+
+  <!-- VOICEROID -->
+  <section class="section card">
+    <h2>VOICEROIDについて</h2>
+    <div class="media-description">
+      <img src="./images/voiceroid_image.png" alt="VOICEROIDの画像枠">
+      <p>VOICEROIDは、AHSが販売する音声合成ソフトウェアです。<wbr>
+         明瞭で自然な発話が特徴で、実況やナレーションなど多くの動画制作に利用されています。<wbr>
+         代表的なキャラクターには「結月ゆかり」「琴葉葵・茜」「東北ずん子」などがいます。</p>
+    </div>
+  </section>
+
+  <section class="section card">
+    <h2>VOICEROIDの技術的特徴</h2>
+    <p>VOICEROIDはAquesTalkエンジンをベースとし、音素ごとの強弱や抑揚を制御することで自然な発話を実現しています。<wbr>
+       話速やピッチの調整も容易で、長文の読み上げや会話形式のセリフにも対応できます。</p>
+  </section>
+
+  <section class="section card">
+    <h2>A.I.VOICEへの発展</h2>
+    <p>VOICEROIDシリーズの進化形として登場したのが「A.I.VOICE」です。<wbr>
+       AIがイントネーションや感情を自動的に補完し、より自然で滑らかな音声を生成します。<wbr>
+       これにより、企業ナレーションや教育分野などへの応用が進んでいます。</p>
+  </section>
+
+  <section class="section card">
+    <h2>VOICEROIDの文化的影響</h2>
+    <p>VOICEROIDキャラクターは、動画文化において“人格を持つ声”として広く愛されています。<wbr>
+       「VOICEROID実況」などのジャンルを生み出し、創作文化の発展に大きな影響を与えました。</p>
+  </section>
+
+  <button class="btn" onclick="location.href='./index.html'">「合成音声の歴史」に戻る</button>
+</main>
+
+<footer class="footer">
+  <p>© 2023 合成音声の歴史. All rights reserved.</p>
+</footer>
+</body>
+</html>
