@@ -18,6 +18,10 @@
   --accent: #6b7280;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   min-height: 100vh;
@@ -97,6 +101,51 @@ a:hover {
   overflow-wrap: break-word;
 }
 
+/* ======= 目次 ======= */
+.toc {
+  margin: 0 auto 40px;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 15px 25px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.95em;
+}
+
+.toc h2 {
+  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 5px;
+}
+
+.toc ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.toc li {
+  text-align: center;
+}
+
+.toc a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+.toc a:hover {
+  background: var(--accent);
+}
+
+/* ======= カード ======= */
 .card {
   margin-bottom: 30px;
   padding: 40px;
@@ -200,14 +249,25 @@ a:hover {
        音楽制作の形を大きく変え、個人クリエイターでも自由に「歌声」を使える時代を切り拓きました。</p>
   </header>
 
-  <section class="section card">
+  <!-- 目次 -->
+  <nav class="toc">
+    <h2>目次</h2>
+    <ul>
+      <li><a href="#tech">仕組みと技術</a></li>
+      <li><a href="#characters">代表的なキャラクター</a></li>
+      <li><a href="#culture">音楽文化への影響</a></li>
+      <li><a href="#future">今後の展開</a></li>
+    </ul>
+  </nav>
+
+  <section id="tech" class="section card">
     <h2>仕組みと技術</h2>
     <p>VOCALOIDは、録音した人間の声をもとに作られた「音声データベース（ボイスバンク）」を使用し、音の高さ・長さ・抑揚などを指定して歌声を合成します。<wbr>
        ユーザーはピアノロール形式の画面上でメロディと歌詞を入力することで、自由に歌を作り上げることができます。<wbr>
        最新のバージョンでは、より自然な発音や息遣い、感情の表現も可能となっています。</p>
   </section>
 
-  <section class="section card">
+  <section id="characters" class="section card">
     <h2>代表的なキャラクター</h2>
     <div class="media-description in-image">
       <img src="./images/ch_img_miku.png" alt="初音ミク">
@@ -218,7 +278,7 @@ a:hover {
     </div>
   </section>
 
-  <section class="section card">
+  <section id="culture" class="section card">
     <h2>音楽文化への影響</h2>
     <p>VOCALOIDの登場により、音楽制作の民主化が進みました。<wbr>
        プロのスタジオを持たない個人でも、パソコン一台で高品質な楽曲を作り、インターネットで世界中に発信できるようになりました。<wbr>
@@ -226,7 +286,7 @@ a:hover {
        「ボカロ文化」と呼ばれる新しいコミュニティが形成されました。</p>
   </section>
 
-  <section class="section card">
+  <section id="future" class="section card">
     <h2>今後の展開</h2>
     <p>VOCALOID技術はCeVIO AIなどのAI合成技術とも融合しつつあり、<wbr>
        今後はより人間に近い表現力と柔軟性を持つ音声合成へと進化していくと期待されています。<wbr>
