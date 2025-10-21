@@ -1,13 +1,382 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゆっくりについて詳しく</title>
+  <style>
+/* 必須のCSS構造 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1f2937;
+  --secondary: #111827;
+  --accent: #6b7280;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: white;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+button, .btn {
+  display: block;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto 0px;
+}
+
+button:hover, .btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+h1, h2, h3 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* カスタムスタイル */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  text-align: left;
+  padding: 0 50px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+    
+.toc {
+  margin-top: 40px;
+  padding: 30px;
+}
+
+.toc-card .toc {
+  margin: 0 auto;
+  max-width: 600px;              /* 横幅を制限 */
+  padding: 15px 20px;            
+  font-size: 0.9em;              /* 全体をやや小さく */
+}
+
+.toc-card .toc h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.toc-card .toc ul {
+  list-style: none;
+  margin: 40px 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.toc-card .toc li {
+  margin: 0;
+}
+
+.toc-card .toc a {
+  padding: 6px 12px;             /* ボタン内の余白を小さく */
+  border-radius: 4px;
+  font-weight: normal;           /* 少し軽くする */
+}
+
+.toc-card .toc a:hover {
+  background: var(--accent);
+  transform: none;               /* 浮き上がり効果をやめて落ち着いた感じに */
+  text-decoration: none;
+}
+   
+.card {
+  margin-bottom: 30px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.8;
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.media-description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.media-description img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.final {
+  margin-bottom: 0px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px 15px 0 0;
+  margin-top: 50px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+    
+@media (min-width: 768px) {
+  .media-description {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .media-description img {
+    flex: 0 0 48%;   /* 横幅を約半分に */
+    max-width: 48%;
+  }
+
+  .media-description .in-image p {
+    flex: 0 0 48%;   /* テキストも約半分に */
+  }
+}
+
+  .hero h1 {
+    font-size: 4.5em;
+  }
+
+  .toc ul {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .toc li {
+    flex-basis: calc(33% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .card h2 {
+    font-size: 2em;
+  }
+
+  .toc ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toc li {
+    width: 90%;
+  }
+}
+  </style>
+</head>
+<body>
+<main class="container">
+  <header class="hero section">
+    <h1>ゆっくりについて詳しく</h1>
+    <p>ゆっくり文化は、東方Projectのキャラクター表現を起点とし、ネットミーム・音声合成・動画文化など多様な分野に影響を与えた独自の文化現象です。本ページではその発生から発展、そして現代における展開を詳しく解説します。</p>
+  </header>
+
+  <section class="section card toc-card">
+    <nav class="toc">
+      <h2>目次</h2>
+        <ul>
+          <li><a href="#Yukkuri">「ゆっくりしていってね！」</a></li>
+          <li><a href="#origin">誕生と初期の広がり</a></li>
+          <li><a href="#spread">動画文化との融合と拡散</a></li>
+          <li><a href="#tech">音声合成技術の進化と支援</a></li>
+          <li><a href="#present">現代のゆっくり文化</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section id="Yukkuri" class="section card">
+      <h2>「ゆっくりしていってね！」</h2>
+      <div class="media-description">
+        <div class="in-image">
+          <p>「ゆっくりしていってね！」のセリフとともに登場した独特のキャラクター表現は、ネット文化の象徴として今も愛されています。表情は単純ながら感情表現が豊かで、音声合成と組み合わせた動画は多くのクリエイターによって発展しました。</p>
+        </div>
+        <div class="aa-container">
+          <pre>　　 _,,....,,_　 ＿人人人人人人人人人人人人人人人＿
+-''":::::::::::::｀''＞　　　ゆっくりしていってね！！！　　＜
+ヽ:::::::::::::::::::::￣^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^￣
+　|::::::;ノ´￣＼:::::::::::＼_,. -‐ｧ　　　　　＿_　　 _____　　 ＿_____
+　|::::ﾉ　　　ヽ､ヽr-r'"´　　（.__　　　　,´　_,, '-´￣￣｀-ゝ 、_ イ、
+_,.!イ_　　_,.ﾍｰｧ'二ﾊ二ヽ､へ,_7　　　'r ´　　　　　　　　　　ヽ、ﾝ、
+::::::rｰ''7ｺ-‐'"´　 　 ;　 ',　｀ヽ/｀7　,'＝=─-　　　 　 -─=＝',　i
+r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ／_ルヽｲ i　|
+!イ´ ,' |　/__,.!/　V　､!__ﾊ　 ,'　,ゝ　ﾚﾘｲi (ﾋ_] 　　 　ﾋ_ﾝ ).| .|、i .||
+`! 　!/ﾚi'　(ﾋ_] 　　 　ﾋ_ﾝ ﾚ'i　ﾉ　　　!Y!""　 ,＿__, 　 "" 「 !ﾉ i　|
+,'　 ﾉ 　 !'"　 　 ,＿__,　 "' i .ﾚ'　　　　L.',.　 　ヽ _ﾝ　　　　L」 ﾉ| .|
+　（　　,ﾊ　　　　ヽ _ﾝ　 　人! 　　　　 | ||ヽ、　　　　　　 ,ｲ| ||ｲ| /
+,.ﾍ,）､　　）＞,､ _____,　,.イ　 ハ　　　　レ ル｀ ー--─ ´ルﾚ　ﾚ´</pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="origin" class="section card content-card">
+      <h2>誕生と初期の広がり</h2>
+      <p>「ゆっくり」文化の始まりは、2008年前後のインターネット掲示板文化にさかのぼります。東方Projectのキャラクターをもとにしたシンプルな顔のアスキーアートが生まれ、「ゆっくりしていってね！」というフレーズとともに急速に拡散しました。これが「ゆっくり霊夢」「ゆっくり魔理沙」といったキャラクターの原型となります。</p>
+      <p>当時はFlashアニメや掲示板のスレッドを通じてユーザー同士の交流が盛んに行われ、キャラクターは次第に二次創作の定番となっていきました。</p>
+    </section>
+
+    <section id="spread" class="section card content-card">
+      <h2>動画文化との融合と拡散</h2>
+      <p>ニコニコ動画の登場により、「ゆっくり実況」や「ゆっくり解説」と呼ばれる形式が誕生しました。これらは棒読み調の合成音声と、特徴的なゆっくり顔の立ち絵を組み合わせた動画スタイルで、投稿者の匿名性や編集のしやすさから多くのユーザーに支持されました。</p>
+      </div>
+      <button class="btn" onclick="location.href='./VOCALOID_info.html'">VOCALOIDについて詳しく</button>
+    </section>
+
+    <section id="yukkuri" class="section card content-card">
+      <h2>「ゆっくり」について</h2>
+      <div class="media-description">
+        <p>VOCALOIDの他にも、様々な個性を持つ合成音声が登場しています。例えば、「ゆっくり」は、主に動画共有サイトで広く使われている合成音声の一種です。特定のソフトウェアを使用することで、機械的ながらも独特の抑揚を持つ音声が生成され、解説動画やゲーム実況など、様々なコンテンツで利用されています。その特徴的な声質は、多くの人々に親しまれ、インターネット文化の一部となっています。</p>
+      </div>
+      <button class="btn" onclick="location.href='./Yukkuri_info.html'">ゆっくりについて詳しく</button>
+    </section>
+
+    <section id="cevio-voiceroid" class="section card content-card">
+      <h2>CeVIO Creative StudioとVOICEROID</h2>
+      <div class="media-description">
+        <p>また、「CeVIO Creative Studio」（通称「CeVIO」）や「VOICEROID」は、より自然な話し声の合成を目指して開発されたソフトウェアです。これらの合成音声は、感情表現や抑揚の調整がVOCALOIDよりも細かく行えるため、ナレーションや朗読、Vtuberの音声など、多岐にわたる用途で活用されています。特にCeVIOは、歌声と話し声の両方を合成できる点で注目され、その表現力の高さは多くのクリエイターに支持されています。VOICEROIDも、魅力的なキャラクターと共に、多彩な声質を提供し、動画制作の現場で不可欠なツールとなっています。</p>
+      </div>
+      <button class="btn" onclick="location.href='./CeVIO_VOICELOID_info.html'">CeVIO / VOICEROIDについて詳しく</button>
+    </section>
+
+    <section id="voicevox" class="section card content-card">
+      <h2>新進気鋭のVOICEVOX</h2>
+      <div class="media-description">
+        <p>「VOICEVOX」は、無料で高品質な音声合成を提供するオープンソースのソフトウェアです。感情豊かな読み上げが可能であり、個人・商用利用問わず多くのユーザーに支持されています。特に、登録不要で簡単に音声を生成できる手軽さや、多様なキャラクター音声が魅力です。動画制作や配信など、多様なシーンで活用されています。</p>
+      </div>
+      <button class="btn" onclick="location.href='./VOICEVOX_info.html'">VOICEVOXについて詳しく</button>
+    </section>
+
+
+    <section id="applications" class="section card content-card">
+      <h2>現在の活用事例</h2>
+      <p>これらの合成音声は、エンターテインメント分野だけでなく、ビジネスや日常生活の様々な場面で活用されています。例えば、スマートスピーカーの音声アシスタント、自動音声案内、eラーニング教材のナレーション、視覚障害者向けの読み上げ機能など、私たちの生活に密着した形でその恩恵を受ける機会が増えています。</p>
+    </section>
+
+    <section id="future" class="section card content-card final">
+      <h2>未来の展望</h2>
+      <p>合成音声の進化はこれからも止まることはないでしょう。ディープラーニングなどの最新の人工知能技術を取り入れることで、合成音声はより自然で、感情豊かな表現力を獲得しつつあります。将来的には、人間の声と区別がつかないほどのクオリティに達し、さらに多様な役割を担っていくことが期待されます。</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2023 合成音声の歴史. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ゆっくりについて詳しく</title>
   <style>
 /* ======= 共通スタイル ======= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root { --primary: #1f2937; --secondary: #111827; --accent: #6b7280; }
+* { 
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+    
+:root { 
+  --primary: #1f2937; 
+  --secondary: #111827; 
+  --accent: #6b7280; 
+}
+    
 body {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
