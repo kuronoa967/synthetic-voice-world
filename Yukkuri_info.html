@@ -169,36 +169,37 @@ a:hover {
 
 .media-description {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;      /* 幅が足りない場合は折り返す */
   gap: 25px;
   margin-bottom: 25px;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.media-description img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
+.media-description .in-image {
+  flex: 1 1 300px;      /* 最小幅300px、余裕があれば伸びる */
 }
 
 .aa-container {
-  background-color: #f8f8f8; /* 背景色（任意） */
+  flex: 1 1 200px;      /* 最小幅200px、余裕があれば伸びる */
+  background-color: #f8f8f8;
   border: 1px solid #ccc;
   padding: 10px;
-  overflow-x: auto; /* 横スクロール許可（長いAAに対応） */
+  overflow-x: auto;
   text-align: center;
 }
 
 .aa-container pre {
   color: #000000;
-  font-family: IPAMonaPGothic, "IPA モナー Pゴシック", Monapo, Mona, "MS Pgothic", "ＭＳ Ｐゴシック", sans-serif; /* 等幅フォント指定 */
-  font-size: 16px;        /* 基本フォントサイズ */
-  line-height: 18px;       /* 行間を広めに設定（縦の潰れ防止） */
-  letter-spacing: 0.05em; /* 横幅を少し広げる */
-  white-space: pre;       /* 改行や空白を正確に表示 */
-  display: inline-block;
-  text-align: left;
-}   
+  font-family: IPAMonaPGothic, "IPA モナー Pゴシック", Monapo, Mona, "MS Pgothic", "ＭＳ Ｐゴシック", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  white-space: pre;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
 
 .final {
   margin-bottom: 0px;
@@ -273,6 +274,14 @@ a:hover {
 
   .toc li {
     width: 90%;
+  }
+  .media-description {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .aa-container pre {
+    font-size: 14px; /* 狭い場合は少し縮小 */
   }
 }
   </style>
