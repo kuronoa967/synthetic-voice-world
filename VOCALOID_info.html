@@ -169,35 +169,16 @@ a:hover {
 
 .media-description {
   display: flex;
-  flex-wrap: wrap;      /* 幅が足りない場合は折り返す */
+  flex-direction: column;
   gap: 25px;
   margin-bottom: 25px;
-  align-items: flex-start;
-  justify-content: space-between;
 }
 
-.media-description .in-image {
-  flex: 1 1 300px;      /* 最小幅300px、余裕があれば伸びる */
-}
-
-.aa-container {
-  flex: 1 1 200px;      /* 最小幅200px、余裕があれば伸びる */
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
-
-.aa-container pre {
-  color: #000000;
-  font-family: IPAMonaPGothic, "IPA モナー Pゴシック", Monapo, Mona, "MS Pgothic", "ＭＳ Ｐゴシック", sans-serif;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: 0.05em;
-  white-space: pre;
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+.media-description img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .final {
