@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合成音声の歴史</title>
+  <style>
+/* 必須のCSS構造 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1f2937;
+  --secondary: #111827;
+  --accent: #6b7280;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: white;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+button, .btn {
+  display: block;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 20px auto 0px;
+}
+
+button:hover, .btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+h1, h2, h3 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* カスタムスタイル */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  text-align: left;
+  padding: 0 50px;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+    
+.toc {
+  margin-top: 40px;
+  padding: 30px;
+}
+
+.toc-card .toc {
+  margin: 0 auto;
+  max-width: 600px;              /* 横幅を制限 */
+  padding: 15px 20px;            
+  font-size: 0.9em;              /* 全体をやや小さく */
+}
+
+.toc-card .toc h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.toc-card .toc ul {
+  list-style: none;
+  margin: 40px 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.toc-card .toc li {
+  margin: 0;
+}
+
+.toc-card .toc a {
+  padding: 6px 12px;             /* ボタン内の余白を小さく */
+  border-radius: 4px;
+  font-weight: normal;           /* 少し軽くする */
+}
+
+.toc-card .toc a:hover {
+  background: var(--accent);
+  transform: none;               /* 浮き上がり効果をやめて落ち着いた感じに */
+  text-decoration: none;
+}
+   
+.card {
+  margin-bottom: 30px;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.8;
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.media-description {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.media-description img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.final {
+  margin-bottom: 0px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px 15px 0 0;
+  margin-top: 50px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.7);
+}
+    
+@media (min-width: 768px) {
+  .media-description {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .media-description img {
+    flex: 0 0 48%;   /* 横幅を約半分に */
+    max-width: 48%;
+  }
+
+  .media-description .in-image p {
+    flex: 0 0 48%;   /* テキストも約半分に */
+  }
+}
+
+  .hero h1 {
+    font-size: 4.5em;
+  }
+
+  .toc ul {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .toc li {
+    flex-basis: calc(33% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .card h2 {
+    font-size: 2em;
+  }
+
+  .toc ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toc li {
+    width: 90%;
+  }
+}
+
+  </style>
+</head>
+<body>
+<main class="container">
+  <header class="hero section"> 
+    <h1>VOICEVOXの歴史と広がり</h1>
+    <p>VOICEVOXは、「誰でも無料で使える高品質な音声合成」を理念に掲げて誕生しました。専門的な知識がなくても自然な発声を生成できる点が特徴で、公開当初から動画制作者や技術者の間で注目を集めました。本稿では、その誕生から現在に至るまでの歩みと、幅広い分野における広がりについて紹介します。</p>
+  </header>
+<section class="section card toc-card">
+  <nav class="toc">
+    <h2>目次</h2>
+    <ul>
+      <li><a href="#birth">1. 誕生の背景</a></li>
+      <li><a href="#open-source">2. オープンソース化の意義</a></li>
+      <li><a href="#character-voices">3. 多彩なキャラクター音声</a></li>
+      <li><a href="#community">4. コミュニティと発展</a></li>
+      <li><a href="#business">5. ビジネス・創作分野への浸透</a></li>
+      <li><a href="#future">6. これからの展望</a></li>
+    </ul>
+  </nav>
+</section>
+
+<section id="birth" class="section card content-card">
+  <h2>1. 誕生の背景</h2>
+  <p>VOICEVOXは2021年、個人開発者によって公開された音声合成ソフトウェアです。当時は高品質な日本語音声合成を無料で利用できるツールが限られており、商用ソフトが主流でした。こうした中、「誰もが手軽に音声合成を体験できるように」という理念のもとで開発が始まりました。<br><br>
+  VOICEVOXは、深層学習技術を応用した音声モデルを採用しており、単調になりがちな合成音声に感情の抑揚を与えることに成功しました。また、GUI操作による直感的な編集や、発声ごとのピッチ調整など、ユーザーが細かく表現をコントロールできる仕組みも特徴的です。</p>
+</section>
+
+<section id="open-source" class="section card content-card">
+  <h2>2. オープンソース化の意義</h2>
+  <div class="media-description">
+    <p>VOICEVOXの大きな転機となったのが、音声合成エンジンのオープンソース化です。ソースコードが公開されたことで、外部のエンジニアが自由に改良・解析できる環境が整いました。これにより、動作の最適化や新機能の追加が活発に行われ、技術的な進化が加速しました。<br><br>
+    また、オープンソース化は教育や研究の場にも波及しました。音声認識や自然言語処理を学ぶ学生・研究者が、VOICEVOXを教材として利用するケースも増えています。技術を共有する姿勢が、多様な人々の参加を促し、音声合成文化の裾野を広げる結果となりました。</p>
+  </div>
+</section>
+
+<section id="character-voices" class="section card content-card">
+  <h2>3. 多彩なキャラクター音声</h2>
+  <div class="media-description in-image">
+    <img src="./images/voicevox_characters.png" alt="VOICEVOXキャラクター">
+    <p>VOICEVOXのもうひとつの魅力は、個性豊かなキャラクター音声の存在です。代表的なキャラクターには「四国めたん」「ずんだもん」「春日部つむぎ」などがあり、それぞれの声質や性格が異なります。こうしたキャラクターは単なる音声モデルにとどまらず、創作文化の中で愛される存在として確立されました。<br><br>
+    これらのキャラクターには、声優による収録データをAIが解析して学習するという過程があり、人間らしい自然なイントネーションを再現しています。また、音声モデルの追加や拡張も進んでおり、ユーザーのニーズに合わせて新しい声が次々と登場しています。</p>
+  </div>
+  <button class="btn" onclick="location.href='./VOICEVOX_info.html'">VOICEVOXのキャラクターについて詳しく</button>
+</section>
+
+<section id="community" class="section card content-card">
+  <h2>4. コミュニティと発展</h2>
+  <div class="media-description">
+    <p>VOICEVOXの発展を支えているのは、熱心なユーザーコミュニティです。公式開発者だけでなく、有志のプログラマーや音声提供者、グラフィックデザイナーが参加し、さまざまな形で貢献しています。GitHubでは改良版エンジンやサードパーティ製のツールが共有され、ユーザー同士の協力によってエコシステムが拡大しています。<br><br>
+    SNS上では、VOICEVOXを用いた動画や音声ドラマが数多く投稿され、ファンアートやボイスドラマ文化も形成されています。このように、技術と創作が相互に影響し合う環境が、VOICEVOXというプロジェクトの持続的な成長を支えています。</p>
+  </div>
+</section>
+
+<section id="business" class="section card content-card">
+  <h2>5. ビジネス・創作分野への浸透</h2>
+  <div class="media-description">
+    <p>VOICEVOXは無料かつ商用利用が可能であるため、企業や個人クリエイターによる導入が急速に進みました。YouTube動画のナレーション、音声付きWebアプリ、VTuber活動、教育教材など、多彩な分野で活用されています。<br><br>
+    特に、低コストで自然な音声を得られる点は大きな利点です。これまでプロのナレーターに依頼していた部分を自動化できるようになり、制作のスピードと柔軟性が飛躍的に向上しました。また、感情パラメータを調整することで、喜び・怒り・悲しみといった感情の演技も可能になっています。</p>
+  </div>
+</section>
+
+<section id="future" class="section card content-card final">
+  <h2>6. これからの展望</h2>
+  <p>VOICEVOXの今後は、AI技術のさらなる進化とともに大きな可能性を秘めています。開発チームは「話す」「歌う」「演じる」といった幅広い音声表現を実現するため、音響モデルと感情制御アルゴリズムの改良を進めています。<br><br>
+  また、海外ユーザーの増加を受け、多言語対応やグローバル展開も検討されています。技術的な枠を超え、人とAIの新しいコミュニケーションを築くための挑戦は続いています。VOICEVOXは、これからもオープンで創造的な音声合成文化の中心として進化し続けるでしょう。</p>
+</section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2023 合成音声の歴史. All rights reserved.</p>
+  </footer>
+</body>
+</html>
