@@ -185,7 +185,6 @@ a:hover {
   background-color: #f8f8f8;
   border: 1px solid #ccc;
   padding: 10px;
-  overflow-x: auto;
   text-align: center;
 }
 
@@ -279,9 +278,10 @@ a:hover {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .aa-container pre {
-    font-size: 14px; /* 狭い場合は少し縮小 */
+}
+@media (max-width: 598px) {
+  .media-description {
+    overflow-x: auto;
   }
 }
   </style>
