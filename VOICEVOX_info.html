@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>合成音声の歴史</title>
+  <title>CeVIO Creative StudioとVOICEROIDについて詳しく</title>
   <style>
-/* 必須のCSS構造 */
+/* ======= 共通スタイル ======= */
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: white;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -69,7 +70,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* カスタムスタイル */
+/* ======= レイアウト ======= */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -79,24 +80,24 @@ a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .hero h1 {
-  font-size: 3.5em;
+  font-size: 3.2em;
   margin-bottom: 30px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .hero p {
   text-align: left;
-  padding: 0 50px;
+  padding: 0 40px;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
-    
+
 .toc {
   margin-top: 40px;
   padding: 30px;
@@ -138,7 +139,8 @@ a:hover {
   transform: none;               /* 浮き上がり効果をやめて落ち着いた感じに */
   text-decoration: none;
 }
-   
+
+/* ======= コンテンツ ======= */
 .card {
   margin-bottom: 30px;
   padding: 40px;
@@ -154,7 +156,7 @@ a:hover {
 }
 
 .card h2 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   margin-bottom: 20px;
   border-bottom: 2px solid var(--accent);
   padding-bottom: 10px;
@@ -181,10 +183,7 @@ a:hover {
   object-fit: cover;
 }
 
-.final {
-  margin-bottom: 0px;
-}
-
+/* ======= フッター ======= */
 .footer {
   text-align: center;
   padding: 30px;
@@ -198,7 +197,8 @@ a:hover {
   font-size: 0.9em;
   color: rgba(255, 255, 255, 0.7);
 }
-    
+
+/* ======= レスポンシブ ======= */
 @media (min-width: 768px) {
   .media-description {
     flex-direction: row;
@@ -207,26 +207,12 @@ a:hover {
   }
 
   .media-description img {
-    flex: 0 0 48%;   /* 横幅を約半分に */
+    flex: 0 0 48%;
     max-width: 48%;
   }
 
-  .media-description .in-image p {
-    flex: 0 0 48%;   /* テキストも約半分に */
-  }
-}
-
-  .hero h1 {
-    font-size: 4.5em;
-  }
-
-  .toc ul {
-    justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .toc li {
-    flex-basis: calc(33% - 20px);
+  .media-description p {
+    flex: 0 0 48%;
   }
 }
 
@@ -236,7 +222,7 @@ a:hover {
   }
 
   .hero h1 {
-    font-size: 2.8em;
+    font-size: 2.5em;
   }
 
   .card {
@@ -244,21 +230,12 @@ a:hover {
   }
 
   .card h2 {
-    font-size: 2em;
-  }
-
-  .toc ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .toc li {
-    width: 90%;
+    font-size: 1.8em;
   }
 }
-
   </style>
 </head>
+
 <body>
 <main class="container">
   <header class="hero section"> 
@@ -280,13 +257,13 @@ a:hover {
 </section>
 
 <section id="birth" class="section card content-card">
-  <h2>1. 誕生の背景</h2>
+  <h2>誕生の背景</h2>
   <p>VOICEVOXは2021年、個人開発者によって公開された音声合成ソフトウェアです。当時は高品質な日本語音声合成を無料で利用できるツールが限られており、商用ソフトが主流でした。こうした中、「誰もが手軽に音声合成を体験できるように」という理念のもとで開発が始まりました。<br><br>
   VOICEVOXは、深層学習技術を応用した音声モデルを採用しており、単調になりがちな合成音声に感情の抑揚を与えることに成功しました。また、GUI操作による直感的な編集や、発声ごとのピッチ調整など、ユーザーが細かく表現をコントロールできる仕組みも特徴的です。</p>
 </section>
 
 <section id="open-source" class="section card content-card">
-  <h2>2. オープンソース化の意義</h2>
+  <h2>オープンソース化の意義</h2>
   <div class="media-description">
     <p>VOICEVOXの大きな転機となったのが、音声合成エンジンのオープンソース化です。ソースコードが公開されたことで、外部のエンジニアが自由に改良・解析できる環境が整いました。これにより、動作の最適化や新機能の追加が活発に行われ、技術的な進化が加速しました。<br><br>
     また、オープンソース化は教育や研究の場にも波及しました。音声認識や自然言語処理を学ぶ学生・研究者が、VOICEVOXを教材として利用するケースも増えています。技術を共有する姿勢が、多様な人々の参加を促し、音声合成文化の裾野を広げる結果となりました。</p>
@@ -294,7 +271,7 @@ a:hover {
 </section>
 
 <section id="character-voices" class="section card content-card">
-  <h2>3. 多彩なキャラクター音声</h2>
+  <h2>多彩なキャラクター音声</h2>
   <div class="media-description in-image">
     <img src="./images/voicevox_characters.png" alt="VOICEVOXキャラクター">
     <p>VOICEVOXのもうひとつの魅力は、個性豊かなキャラクター音声の存在です。代表的なキャラクターには「四国めたん」「ずんだもん」「春日部つむぎ」などがあり、それぞれの声質や性格が異なります。こうしたキャラクターは単なる音声モデルにとどまらず、創作文化の中で愛される存在として確立されました。<br><br>
@@ -304,7 +281,7 @@ a:hover {
 </section>
 
 <section id="community" class="section card content-card">
-  <h2>4. コミュニティと発展</h2>
+  <h2>コミュニティと発展</h2>
   <div class="media-description">
     <p>VOICEVOXの発展を支えているのは、熱心なユーザーコミュニティです。公式開発者だけでなく、有志のプログラマーや音声提供者、グラフィックデザイナーが参加し、さまざまな形で貢献しています。GitHubでは改良版エンジンやサードパーティ製のツールが共有され、ユーザー同士の協力によってエコシステムが拡大しています。<br><br>
     SNS上では、VOICEVOXを用いた動画や音声ドラマが数多く投稿され、ファンアートやボイスドラマ文化も形成されています。このように、技術と創作が相互に影響し合う環境が、VOICEVOXというプロジェクトの持続的な成長を支えています。</p>
@@ -312,7 +289,7 @@ a:hover {
 </section>
 
 <section id="business" class="section card content-card">
-  <h2>5. ビジネス・創作分野への浸透</h2>
+  <h2>ビジネス・創作分野への浸透</h2>
   <div class="media-description">
     <p>VOICEVOXは無料かつ商用利用が可能であるため、企業や個人クリエイターによる導入が急速に進みました。YouTube動画のナレーション、音声付きWebアプリ、VTuber活動、教育教材など、多彩な分野で活用されています。<br><br>
     特に、低コストで自然な音声を得られる点は大きな利点です。これまでプロのナレーターに依頼していた部分を自動化できるようになり、制作のスピードと柔軟性が飛躍的に向上しました。また、感情パラメータを調整することで、喜び・怒り・悲しみといった感情の演技も可能になっています。</p>
@@ -320,7 +297,7 @@ a:hover {
 </section>
 
 <section id="future" class="section card content-card final">
-  <h2>6. これからの展望</h2>
+  <h2>これからの展望</h2>
   <p>VOICEVOXの今後は、AI技術のさらなる進化とともに大きな可能性を秘めています。開発チームは「話す」「歌う」「演じる」といった幅広い音声表現を実現するため、音響モデルと感情制御アルゴリズムの改良を進めています。<br><br>
   また、海外ユーザーの増加を受け、多言語対応やグローバル展開も検討されています。技術的な枠を超え、人とAIの新しいコミュニケーションを築くための挑戦は続いています。VOICEVOXは、これからもオープンで創造的な音声合成文化の中心として進化し続けるでしょう。</p>
 </section>
